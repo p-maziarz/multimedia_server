@@ -1,5 +1,5 @@
 from app import app
 
-@app.routes('/')
+@app.route('/')
 def index():
     return "Hello, Flask!"

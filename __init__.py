@@ -2,9 +2,9 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URL'] = 'postgresql://username:password@localhost/db_name'
-app.config['SECRET_KEY'] = 'your_secret_key'
+app.config.from_object('config.Config') 
 
 db = SQLAlchemy(app)
 
-from app import routes
+# Import routes or models
+from app import routes, models
